@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Movie Booking</title>
+    <style>
+      aside {
+        float: right;
+      }
+      nav {
+        display: flex;
+        justify-content: space-around;
+        background: whitesmoke;
+        height: 30px;
+        align-items: center;
+        border-top: solid;
+        border-bottom: solid;
+        width: 100vw;
+      }
+      footer {
+        text-align: center;
+        background-color: black;
+        color: white;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+      figure,
+      img {
+        height: 200px;
+        width: 200px;
+      }
+      figcaption {
+        background-color: whitesmoke;
+        color: black;
+        font-style: italic;
+        padding: 2px;
+        text-align: center;
+      }
+      .nowshowing {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <center><h1>BookMyShow</h1></center>
+    </header>
+    <nav>
+      <a href="#">New Releases</a> | <a href="#">Bookings</a> |
+      <a href="#" target="_self">Contatcs</a> |
+      <a href="#" target="_blank">Careers</a>
+      <aside>
+        <label for="language">Language:</label>
+        <select id="language" name="language">
+          <option value="english">English</option>
+          <option value="tamil">Tamil</option>
+          <option value="hindi">Hindi</option>
+          <option value="french">French</option>
+        </select>
+      </aside>
+    </nav>
+
+    <section>
+      <center><h1>NOW SHOWING</h1></center>
+      <div class="nowshowing">
+        <article>
+          <figure>
+            <img
+              src="https://www.pinkvilla.com/imageresize/thalapahy_65_is_titled_beast.jpg?width=752&format=webp&t=pvorg"
+              alt="Beast tamil movie poster"
+            />
+            <figcaption>
+              <h3>Beast</h3>
+              <p>Action/Dark comedy</p>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article>
+          <figure>
+            <img
+              src="https://pbs.twimg.com/media/EMUD70SUcAAWWyH.jpg"
+              alt="KGF Chapter movie poster"
+            />
+            <figcaption>
+              <h3>K.G.F: Chapter 2</h3>
+              <p>Action/Drama</p>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article>
+          <figure>
+            <img
+              src="https://www.pinkvilla.com/imageresize/jersey-release.jpg?width=752&format=webp&t=pvorg"
+              alt="Jersey movie poster"
+            />
+            <figcaption>
+              <h3>Jersey</h3>
+              <p>Drama/Sport</p>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article>
+          <figure>
+            <img
+              src="https://www.pinkvilla.com/imageresize/rrr-review.jpg?width=752&format=webp&t=pvorg"
+              alt="RRR movie poster"
+            />
+            <figcaption>
+              <h3>RRR</h3>
+              <p>Action/Drama</p>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article>
+          <figure>
+            <img
+              src="https://images.news18.com/ibnlive/uploads/2022/03/fantastic-beasts-poster.jpg"
+              alt="Fantastic Beasts movie poster"
+            />
+            <figcaption>
+              <h3>Fantastic Beasts</h3>
+              <p>Adventure/Family/Fantasy</p>
+            </figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <p>@copyright 2022 bookmyshow@example.com</p>
+    </footer>
+  </body>
+</html>
