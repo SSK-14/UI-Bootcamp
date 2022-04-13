@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dog.D</title>
+    <style>
+      .aside {
+        float: right;
+        position: sticky;
+        top: 0;
+        z-index: 4;
+      }
+      .footer {
+        text-align: center;
+        background-color: black;
+        color: white;
+        position: relative;
+        width: 100%;
+      }
+      img {
+        height: 200px;
+        width: 300px;
+        border: solid;
+        border-color: brown;
+        opacity: 1;
+      }
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        z-index: 3;
+        margin-top: 0px;
+        background-color: darkred;
+        color: antiquewhite;
+        text-align: center;
+      }
+      .firstsection {
+        margin-top: 50px;
+      }
+      .section-header {
+        background-color: rgb(156, 193, 221);
+        color: rgb(12, 63, 140);
+        padding: 10px;
+        border: 2px solid black;
+        margin: 5px;
+      }
+      .bluebold {
+        color: rgb(12, 63, 140);
+        font-weight: bold;
+      }
+      .blue {
+        color: rgb(12, 63, 140);
+      }
+      .darkblue {
+        color: darkblue;
+      }
+      .figcaption {
+        text-align: center;
+        color: darkred;
+        font-size: 18px;
+        font-weight: bolder;
+      }
+      .grey-bg {
+        background-color: rgb(185, 184, 184);
+      }
+      .fieldset {
+        color: darkred;
+        background-color: whitesmoke;
+      }
+      .flexbox {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .flex-paragraph {
+        border: 2px solid darkblue;
+        padding: 5px;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="header">Dog D.Dog</h1>
+    </header>
+
+    <section class="firstsection">
+      <h2 class="section-header">About</h2>
+
+      <article>
+        <h3>Woof Woof</h3>
+        <p>
+          Hi i am a dog i love <span class="bluebold">userinterface</span>
+        </p>
+      </article>
+    </section>
+
+    <section>
+      <aside class="aside">
+        <figure>
+          <img
+            src="https://media.istockphoto.com/photos/cool-dog-picture-id1049869360?k=20&m=1049869360&s=170667a&w=0&h=T4r72abJxmm0hBZJNWXTVZpbbq6bleah9FGaOGL2RMY="
+            alt="D.Dogs image"
+          />
+          <figcaption class="figcaption">
+            Hello Folks, D.Dog here
+          </figcaption>
+        </figure>
+      </aside>
+      <h2 class="section-header">Courses</h2>
+
+      <article>
+        <h3>Here are some of the courses taken</h3>
+
+        <table border="1">
+          <tr>
+            <th>Course Number</th>
+            <th>Course Title</th>
+            <th>Semester Taken</th>
+          </tr>
+          <tr>
+            <th colspan="3" style="text-align: center">For Credit</th>
+          </tr>
+          <tr class="grey-bg">
+            <td>6.789</td>
+            <td class="blue">User Interface Diagram</td>
+            <td class="blue">Spring 2014</td>
+          </tr>
+          <tr>
+            <td class="blue">6.789</td>
+            <td>User Interface Diagram</td>
+            <td>Spring 2014</td>
+          </tr>
+          <tr>
+            <td class="grey-bg darkblue">6.789</td>
+            <td>User Interface Diagram</td>
+            <td>Spring 2014</td>
+          </tr>
+
+          <tr>
+            <th colspan="3" style="text-align: center">Listener</th>
+          </tr>
+          <tr class="grey-bg">
+            <td class="darkblue">6.789</td>
+            <td>User Interface Diagram</td>
+            <td>Spring 2014</td>
+          </tr>
+          <tr>
+            <td class="darkblue">6.789</td>
+            <td>User Interface Diagram</td>
+            <td>Spring 2014</td>
+          </tr>
+          <tr>
+            <td class="grey-bg blue">6.789</td>
+            <td>User Interface Diagram</td>
+            <td>Spring 2014</td>
+          </tr>
+        </table>
+      </article>
+    </section>
+
+    <section>
+      <h2 class="section-header">Interest</h2>
+
+      <article>
+        <p>Intrested in <b>youtube</b> movie and ui</p>
+      </article>
+    </section>
+
+    <section>
+      <h2 class="section-header">Flex Box Model</h2>
+
+      <article>
+        <div class="flexbox">
+          <p class="flex-paragraph">My first paragraph.</p>
+          <p class="flex-paragraph">My second paragraph.</p>
+          <p class="flex-paragraph" style="flex-grow: 2">
+            My third paragraph.
+          </p>
+          <p class="flex-paragraph" style="flex-grow: 1">
+            My fourth paragraph.
+          </p>
+          <p class="flex-paragraph" style="order: -1">
+            My fifth paragraph.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section>
+      <h2 class="section-header">Submit Pet Information</h2>
+
+      <form>
+        <fieldset class="fieldset">
+          <legend>Pet Info:</legend>
+          <label for="name">Name:</label><br />
+          <input type="text" id="name" name="name" required /><br />
+          <label for="phylum">Phylum:</label><br />
+          <input type="text" id="phylum" name="phylum" />
+          <br /><br />
+
+          <label for="Gender">Gender:</label>
+          <input list="Gender" />
+          <datalist id="Gender">
+            <option value="Male"></option>
+            <option value="Female"></option>
+            <option value="Other"></option>
+          </datalist>
+          <br /><br />
+
+          <input type="checkbox" id="info" name="info" value="info" />
+          <label for="info"> Send me more Information</label><br /><br />
+
+          <button type="reset">Clear Form</button>
+          <button type="submit">Send Info</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <p>@copyright 2022 bootcamp@example.com</p>
+    </footer>
+  </body>
+</html>
