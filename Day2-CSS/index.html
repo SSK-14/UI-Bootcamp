@@ -8,84 +8,7 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Dog.D</title>
-    <style>
-      .aside {
-        float: right;
-        position: sticky;
-        top: 0;
-        z-index: 4;
-      }
-      .footer {
-        text-align: center;
-        background-color: black;
-        color: white;
-        position: relative;
-        width: 100%;
-      }
-      img {
-        height: 200px;
-        width: 300px;
-        border: solid;
-        border-color: brown;
-        opacity: 1;
-      }
-      .header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 40px;
-        z-index: 3;
-        margin-top: 0px;
-        background-color: darkred;
-        color: antiquewhite;
-        text-align: center;
-      }
-      .firstsection {
-        margin-top: 50px;
-      }
-      .section-header {
-        background-color: rgb(156, 193, 221);
-        color: rgb(12, 63, 140);
-        padding: 10px;
-        border: 2px solid black;
-        margin: 5px;
-      }
-      .bluebold {
-        color: rgb(12, 63, 140);
-        font-weight: bold;
-      }
-      .blue {
-        color: rgb(12, 63, 140);
-      }
-      .darkblue {
-        color: darkblue;
-      }
-      .figcaption {
-        text-align: center;
-        color: darkred;
-        font-size: 18px;
-        font-weight: bolder;
-      }
-      .grey-bg {
-        background-color: rgb(185, 184, 184);
-      }
-      .fieldset {
-        color: darkred;
-        background-color: whitesmoke;
-      }
-      .flexbox {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
-      .flex-paragraph {
-        border: 2px solid darkblue;
-        padding: 5px;
-        margin: 5px;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
@@ -191,6 +114,40 @@
           <p class="flex-paragraph" style="order: -1">
             My fifth paragraph.
           </p>
+        </div>
+      </article>
+    </section>
+
+    <section>
+      <h2 class="section-header">Flex Box Design</h2>
+
+      <article>
+        <div class="flexbox-1">
+          <div class="box-1">1</div>
+          <div class="flexbox-2">
+            <div class="box-2">2</div>
+            <div class="flexbox-3">
+              <div class="box-3">3</div>
+              <div class="flexbox-4">
+                <div class="box-4">4a</div>
+                <div class="box-4">4b</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section>
+      <h2 class="section-header">Position Design</h2>
+
+      <article>
+        <div class="parent-box">
+          <div class="red-box">Red</div>
+          <div class="green-box">Green</div>
+          <div class="blue-box">Blue</div>
+          <div class="yellow-box">yellow</div>
+          <div class="grey-box">Footer</div>
         </div>
       </article>
     </section>
