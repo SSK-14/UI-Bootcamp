@@ -100,7 +100,7 @@
   padding: 2px 16px;
 }
 
-@media screen and (min-width: 600.1px) {
+@media screen and (min-width: 600px) {
 .dropdown {
   display: none;
 }
