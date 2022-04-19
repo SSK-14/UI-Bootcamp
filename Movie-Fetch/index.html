@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>movie.com</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="white-text">Latest Movies</h1>
+      <link rel="stylesheet" href="style.css" />
+    </header>
+    <main>
+      <section class="flex-container">
+        <figure
+          style="
+            border: 1px rgb(93, 93, 93) solid;
+            height: 450px;
+            width: 90vw;
+            background-color: white;
+          "
+        >
+          <img width="70%" height="70%" id="display-image" />
+          <figcaption id="movie-desc" style="padding: 5px">
+            This is sample description
+          </figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <ul class="flex-container" id="movie-list" type="none"></ul>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
