@@ -1,22 +1,26 @@
 import React from "react";
+import "./styles.css";
 
 const MovieCard = (props) => {
-  const { name, image, language } = props;
+  const { name, image, language, rating } = props;
+
   return (
-    <section>
-      <h2>{name}</h2>
-      <figure
-        style={{
-          border: "1px black solid",
-          height: "450px",
-          width: "90vw",
-          backgroundColor: "white",
-        }}
-      >
-        <img src={image.medium} />
-        <figcaption>{language}</figcaption>
-      </figure>
-    </section>
+    <div className='flip-card'>
+      <div className='flip-card-inner'>
+        <div className='flip-card-front'>
+          <img
+            src={image.medium}
+            alt='movie-image'
+            style={{ width: "100%", height: "100%" }}
+          />
+        </div>
+        <div className='flip-card-back'>
+          <h1>{name}</h1>
+          <p>{language}</p>
+          <p>{rating.average}</p>
+        </div>
+      </div>
+    </div>
   );
 };
 

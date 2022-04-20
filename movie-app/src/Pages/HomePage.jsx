@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import MovieCard from "../Components/MovieCard";
+import "./styles.css";
 
 const HomePage = () => {
   const [movieData, setMovieData] = useState([]);
@@ -45,27 +46,38 @@ const HomePage = () => {
 
   return (
     <>
-      <input
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      <button
-        onClick={() => {
-          setAscending(true);
-        }}
-      >
-        Accending
-      </button>
-      <button
-        onClick={() => {
-          setAscending(false);
-        }}
-      >
-        Decending
-      </button>
-      {filterMovieData.map((movie) => (
-        <MovieCard key={movie.id} {...movie} />
-      ))}
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <div style={{ margin: "10px" }}>
+          <label for='name'>Search:</label>
+          <input
+            id='search'
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
+        <button
+          style={{ margin: "10px" }}
+          onClick={() => {
+            setAscending(true);
+          }}
+        >
+          Accending
+        </button>
+        <button
+          style={{ margin: "10px" }}
+          onClick={() => {
+            setAscending(false);
+          }}
+        >
+          Decending
+        </button>
+      </div>
+
+      <div className='movie-list'>
+        {filterMovieData.map((movie) => (
+          <MovieCard key={movie.id} {...movie} />
+        ))}
+      </div>
     </>
   );
 };
