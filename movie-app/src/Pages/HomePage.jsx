@@ -4,9 +4,14 @@ import MovieCard from "../Components/MovieCard";
 
 const HomePage = () => {
   const [movieData, setMovieData] = useState([]);
-  const [isAscending, setAscending] = useState(false);
+  const [isAscending, setAscending] = useState(true);
   const [filterMovieData, setFilterMovie] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const sortAccending = (movieData) => {
+    return movieData.sort((a, b) => {
+      return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+    });
+  };
 
   useEffect(() => {
     async function fetchMyAPI() {
@@ -14,7 +19,7 @@ const HomePage = () => {
         let response = await fetch("https://api.tvmaze.com/shows");
         let data = await response.json();
         setMovieData(data);
-        setFilterMovie(data);
+        setFilterMovie(sortAccending(data));
       } catch (err) {
         console.log(err);
       }
@@ -24,25 +29,15 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
-    const sortAccending = () => {
-      console.log("hello");
-      let sortedData = filterMovieData.sort((a, b) => {
-        return b.name.toLowerCase().localeCompare(a.name.toLowerCase());
-      });
-      console.log(sortedData);
-      setFilterMovie(sortedData);
-    };
-
     function filter() {
-      setFilterMovie(
-        movieData.filter((movie) =>
-          movie.name.toLowerCase().includes(searchTerm.toLowerCase())
-        )
+      let filterData = movieData.filter((movie) =>
+        movie.name.toLowerCase().includes(searchTerm.toLowerCase())
       );
-
-      if (isAscending) {
-        sortAccending();
+      let sortedData = sortAccending(filterData);
+      if (!isAscending) {
+        sortedData = sortAccending(filterData).reverse();
       }
+      setFilterMovie(sortedData);
     }
 
     filter();
@@ -61,9 +56,15 @@ const HomePage = () => {
       >
         Accending
       </button>
-      <button>Decending</button>
-      {filterMovieData.map((element) => (
-        <MovieCard key={element.id} {...element} />
+      <button
+        onClick={() => {
+          setAscending(false);
+        }}
+      >
+        Decending
+      </button>
+      {filterMovieData.map((movie) => (
+        <MovieCard key={movie.id} {...movie} />
       ))}
     </>
   );
