@@ -3,7 +3,7 @@ h2 {
 }
 
 .movie-list {
-  margin-top: 80px;
+  margin-top: 25px;
   display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -72,4 +72,22 @@ h2 {
 .no-result {
   height: 100vh;
   color: white;
+}
+
+.add-button{
+	position:fixed;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#4267b2;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px black;
+  width: fit-content;
+  z-index: 2;
+}
+
+.my-float{
+	margin-top:22px;
 }

@@ -3,13 +3,16 @@ import { useState } from "react";
 import AddButton from "../Components/AddButton";
 import Form from "../Components/Form";
 import Modal, { ModalBody, ModalHeader } from "../Components/Modal";
+import "./styles.css";
 
 const AddForm = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <div>
-      <AddButton onClick={() => setShowModal(true)}>ADD MOVIE</AddButton>
+      <button className='add-button' onClick={() => setShowModal(true)}>
+        ADD MOVIE
+      </button>
       <Modal
         show={showModal}
         setShow={setShowModal}
