@@ -17,7 +17,7 @@ const MovieCard = (props) => {
         <div className='flip-card-back'>
           <h2 className='movie-title'>{name}</h2>
           <span>{language}</span>
-          <p>{genres.join("-")}</p>
+          {/* <p>{genres.join("-")}</p> */}
           <p className='ratings'> &#9733; {rating.average}</p>
         </div>
       </div>

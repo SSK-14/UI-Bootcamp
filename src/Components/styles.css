@@ -74,3 +74,22 @@
   font-family: fangsong;
   font-size: 2rem;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+}
+
+label{
+  margin: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px 18px;
+  margin: 6px 0;
+  box-sizing: border-box;
+}

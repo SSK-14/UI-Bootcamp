@@ -1,24 +1,23 @@
-import React from "react";
-
 const sortAscending = (movieData) => {
   return movieData.sort((a, b) => {
     return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
   });
 };
 
-const filter = ({ movieData, searchTerm }) => {
+const filter = ({ movieData, searchTerm, isAscending }) => {
+  let sort;
   let filterData = movieData.filter((movie) =>
     movie.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
-  return filterData;
+  sort = sortAscending(filterData);
+  if (!isAscending) {
+    sort = sortAscending(filterData).reverse();
+  }
+  return sort;
 };
 
 function MovieReducer(state, action) {
   switch (action.type) {
-    case "ascending":
-      return sortAscending(action.payload);
-    case "decending":
-      return sortAscending(action.payload).reverse;
     case "filter":
       state = filter(action.payload);
       return state;
