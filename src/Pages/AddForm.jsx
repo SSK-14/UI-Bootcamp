@@ -19,7 +19,7 @@ const AddForm = () => {
           <h3>Enter Movie Details</h3>
         </ModalHeader>
         <ModalBody>
-          <Form />
+          <Form close={() => setShowModal(false)} />
         </ModalBody>
       </Modal>
     </div>

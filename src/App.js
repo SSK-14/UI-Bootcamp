@@ -1,10 +1,13 @@
 import "./App.css";
 import HomePage from "./Pages/HomePage";
+import { MovieProvider } from "./Reducer/MovieContext";
 
 function App() {
   return (
     <div className='App'>
-      <HomePage />
+      <MovieProvider>
+        <HomePage />
+      </MovieProvider>
     </div>
   );
 }

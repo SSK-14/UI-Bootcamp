@@ -1,24 +1,23 @@
-import React from "react";
-import { useState, useEffect, useReducer } from "react";
+import React, { useContext } from "react";
+import { useState, useEffect } from "react";
 import MovieCard from "../Components/MovieCard";
 import "./styles.css";
-import MovieReducer from "../Reducer/MovieReducer";
 import AddForm from "./AddForm";
+import { MovieContext } from "../Reducer/MovieContext";
 
 const HomePage = () => {
-  const [movieData, setMovieData] = useState([]);
   const [isAscending, setAscending] = useState(true);
-  const [filterMovieData, setFilterMovie] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [state, dispatch] = useReducer(MovieReducer, movieData);
-
+  const { dispatch, movies, initialMovies } = useContext(MovieContext);
   useEffect(() => {
     async function fetchMyAPI() {
       try {
         let response = await fetch("https://api.tvmaze.com/shows");
         let data = await response.json();
-        setMovieData([...data]);
-        setFilterMovie([...data]);
+        dispatch({
+          type: "FETCH",
+          payload: { data },
+        });
       } catch (err) {
         console.log(err);
       }
@@ -30,14 +29,13 @@ const HomePage = () => {
   useEffect(() => {
     function filter() {
       dispatch({
-        type: "filter",
-        payload: { movieData, searchTerm, isAscending },
+        type: "FILTER",
+        payload: { initialMovies, searchTerm, isAscending },
       });
-      setFilterMovie(state);
     }
 
     filter();
-  }, [searchTerm, isAscending, movieData, state]);
+  }, [searchTerm, isAscending, initialMovies]);
 
   return (
     <>
@@ -77,9 +75,9 @@ const HomePage = () => {
         <div>
           <AddForm />
         </div>
-        {filterMovieData.length ? (
+        {movies.length ? (
           <div className='movie-list'>
-            {filterMovieData.map((movie) => (
+            {movies.map((movie) => (
               <MovieCard key={movie.id} {...movie} />
             ))}
           </div>

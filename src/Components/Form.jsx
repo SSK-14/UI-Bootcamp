@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { MovieContext } from "../Reducer/MovieContext";
 import AddButton from "./AddButton";
 import "./styles.css";
 
-export const Form = () => {
+export const Form = ({ close }) => {
   const [inputs, setInputs] = useState({});
-
+  const { addMovie } = useContext(MovieContext);
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -22,8 +23,8 @@ export const Form = () => {
         average: inputs.rating,
       },
     };
-
-    console.log(finalValues);
+    addMovie(finalValues);
+    close();
   };
 
   return (
@@ -64,7 +65,7 @@ export const Form = () => {
           onChange={handleChange}
         />
       </label>
-      <AddButton onClick={() => handleSubmit()}>Submit</AddButton>
+      <AddButton onClick={handleSubmit}>Submit</AddButton>
     </form>
   );
 };

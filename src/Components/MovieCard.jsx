@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.css";
 
 const MovieCard = (props) => {
-  const { name, image, language, rating, genres } = props;
+  const { name, image, language, rating } = props;
 
   return (
     <div className='flip-card'>
