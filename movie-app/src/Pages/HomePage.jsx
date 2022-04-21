@@ -42,35 +42,38 @@ const HomePage = () => {
     }
 
     filter();
-  }, [searchTerm, isAscending]);
+  }, [searchTerm, isAscending, movieData]);
 
   return (
     <>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <div style={{ margin: "10px" }}>
-          <label for='name'>Search:</label>
+      <div className='nav-bar'>
+        <div className='search-box'>
           <input
+            className='input-search'
             id='search'
+            placeholder='Type to Search...'
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
-        <button
-          style={{ margin: "10px" }}
-          onClick={() => {
-            setAscending(true);
-          }}
-        >
-          Accending
-        </button>
-        <button
-          style={{ margin: "10px" }}
-          onClick={() => {
-            setAscending(false);
-          }}
-        >
-          Decending
-        </button>
+        <div className='button-group'>
+          <button
+            className='button'
+            onClick={() => {
+              setAscending(true);
+            }}
+          >
+            Accending
+          </button>
+          <button
+            className='button'
+            onClick={() => {
+              setAscending(false);
+            }}
+          >
+            Decending
+          </button>
+        </div>
       </div>
 
       <div className='movie-list'>
