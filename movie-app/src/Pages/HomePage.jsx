@@ -1,12 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import MovieCard from "../Components/MovieCard";
+import Banner from "../Components/Banner";
 import "./styles.css";
 
 const HomePage = () => {
   const [movieData, setMovieData] = useState([]);
   const [isAscending, setAscending] = useState(true);
   const [filterMovieData, setFilterMovie] = useState([]);
+  const [bannerMovieData, setBannerMovie] = useState();
   const [searchTerm, setSearchTerm] = useState("");
   const sortAccending = (movieData) => {
     return movieData.sort((a, b) => {
@@ -20,6 +22,7 @@ const HomePage = () => {
         let response = await fetch("https://api.tvmaze.com/shows");
         let data = await response.json();
         setMovieData(data);
+        setBannerMovie(data[0]);
         setFilterMovie(sortAccending(data));
       } catch (err) {
         console.log(err);
@@ -39,6 +42,7 @@ const HomePage = () => {
         sortedData = sortAccending(filterData).reverse();
       }
       setFilterMovie(sortedData);
+      setBannerMovie(sortedData[0]);
     }
 
     filter();
@@ -47,6 +51,9 @@ const HomePage = () => {
   return (
     <>
       <div className='nav-bar'>
+        <header className='App-header'>
+          <h1>Movie Cards</h1>
+        </header>
         <div className='search-box'>
           <input
             className='input-search'
@@ -63,7 +70,7 @@ const HomePage = () => {
               setAscending(true);
             }}
           >
-            Accending
+            A - Z
           </button>
           <button
             className='button'
@@ -71,15 +78,25 @@ const HomePage = () => {
               setAscending(false);
             }}
           >
-            Decending
+            Z - A
           </button>
         </div>
       </div>
-
-      <div className='movie-list'>
-        {filterMovieData.map((movie) => (
-          <MovieCard key={movie.id} {...movie} />
-        ))}
+      <div>
+        {/* {typeof bannerMovieData !== "undefined" ? (
+          <Banner {...bannerMovieData} />
+        ) : null} */}
+        {filterMovieData.length ? (
+          <div className='movie-list'>
+            {filterMovieData.map((movie) => (
+              <MovieCard key={movie.id} {...movie} />
+            ))}
+          </div>
+        ) : (
+          <div className='no-result'>
+            <p>No Results Found</p>
+          </div>
+        )}
       </div>
     </>
   );

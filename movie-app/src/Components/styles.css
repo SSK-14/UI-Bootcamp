@@ -3,9 +3,24 @@
   margin: 1rem;
   width: 300px;
   height: 400px;
-  border: 1px solid #f1f1f1;
   perspective: 1000px; 
   border-radius: 20px;
+}
+
+.banner-card {
+  background-color: transparent;
+  margin: 1rem;
+  width: 90vw;
+  height: 400px;
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+.banner-content{
+  height: fit-content;
+  padding: 10px;
 }
 
 .flip-card-inner {
